@@ -1,7 +1,7 @@
 import { useState } from "react"
 import SearchBar from "./SearchBar";
 
-function List({ projects, onRemove}){
+function Lists({ projects, onRemove}){
     const [searchTerm, setSearhTerm]= useState("")
     const filteredProjects = projects
     .filter((project) => project.title.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -23,4 +23,4 @@ function List({ projects, onRemove}){
         </div>
     )
 }
-export default List
+export default Lists

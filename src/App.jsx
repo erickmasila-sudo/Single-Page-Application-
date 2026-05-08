@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Form from './components/Form'
 import Header from './components/Header'
 import Lists from './components/Lists'
@@ -12,15 +12,16 @@ function App(){
   useEffect(()=>{
     localStorage.setItem("projects", JSON.stringify(projects))
   }, [projects])
-  function handleAdd(project){
+  {/*Function for adding */ }
+  function handleAdd(project) {
     setProjects([...projects, project])
   }
-
-  function handleRemove(index){
-    setProjects(projects.filter((_,i) => i !== index))
+  {/*Function to remove a project from the list*/ }
+  function handleRemove(index) {
+    setProjects(projects.filter((_, i) => i !== index))
   }
 
-  return(
+  return (
     <div className='bg-gray-800 min-h-screen p-4 md:p-8'>
     <div className='bg-white w-full md:max-w-8xl md:mx-auto rounded-lg overflow-hidden md:min-h-200'>
     <Header/>

@@ -5,7 +5,7 @@ function Form({ Project }){
     const [description, setdescription] = useState("")
     const [TitleError, setTitleError] =useState("")
     const[DescriptionError, setDescriptionError] =useState("")
-    function handleSubmit(e){
+    function handleSubmit(e){  //Checks if Both Title and Description are added
         e.preventDefault()
         let valid= true
         if(!title.trim()){
@@ -36,7 +36,7 @@ function Form({ Project }){
             <label>Description</label>
             <textarea placeholder= "Add Description" className="border border-gray-300 rounded p-2 min-h-24 resize-y"
             value={description} onChange={(e) => setdescription(e.target.value)}
-            onInput={(e) => {e.target.style.height= "auto"; e.target.style.height= e.target.scrollHeight + "px"
+            onInput={(e) => {e.target.style.height= "auto"; e.target.style.height= e.target.scrollHeight + "px" //Causes the text area to automatically enlarge witg input
             }}
             ></textarea>
             {DescriptionError && <p className="text-red-500 text-xs">{DescriptionError}</p>}
